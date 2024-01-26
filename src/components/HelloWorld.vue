@@ -12,7 +12,7 @@
         </div>
         <div class="infoCon">
           <p>3 am</p>
-          <div class="online"></div>
+          <!-- <div class="online"></div> -->
         </div>
       </router-link>
     </div>

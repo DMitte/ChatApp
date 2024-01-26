@@ -1,13 +1,13 @@
 <template>
   <div class="home">    
     <nav>
-      <div class="close"><img src="../assets/icons/close.svg" alt="close icon"></div>
+      <div class="close" @click="closeSesion"><img src="../assets/icons/close.svg" alt="close icon"></div>
       <div><h1>ChatterUp</h1></div>
       <div class="search"><img src="../assets/icons/search.svg" alt="search icon"></div>
     </nav>
     <section class="info">
       <h3>Friends</h3>
-      <div class="online"><p>3/3 Online</p></div>
+      <!-- <div class="online"><p>3/3 Online</p></div> -->
     </section>
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
@@ -17,6 +17,8 @@
 // @ is an alias to /src
 import HelloWorld from "@/components/HelloWorld.vue";
 import {mapActions} from 'vuex'
+import VueCookies  from "vue-cookies";
+
 export default {
   name: "HomeView",
   components: {
@@ -24,6 +26,12 @@ export default {
   },
   computed: {
     ...mapActions('user', ['getMyUser', 'getAllUser'])
+  },
+  methods: {
+     closeSesion(){
+      VueCookies.remove('accessToken')
+      this.$router.push('/login')
+     }
   },
   created(){
     this.getMyUser

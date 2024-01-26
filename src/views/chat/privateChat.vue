@@ -12,7 +12,7 @@
                     <h3>{{anotherUser.username}}</h3>
                     <p>27</p>
                     <!-- TODO hacer que se muestre si esta conectada o no una persona -->
-                    <div class="connect"></div>
+                    <!-- <div class="connect"></div> -->
                 </div>
                 <div class="descrip">
                     <p>My name is kate, i’m look netfilx would you like to accompany me</p>
@@ -33,7 +33,7 @@ export default {
       socketio: Object,
       messages: [],      
       myuser: {},
-      anotherUser: {}
+      anotherUser: {},
     }
   },
     name: "PrivateChatView",
@@ -72,11 +72,9 @@ export default {
             this.socketio.emit('join', `${this.myuser._id}--with--${username2}`)
             
           }
-          this.socketio.on("onMessage", (msg) => { 
-              console.log(msg)         
+          this.socketio.on("onMessage", (msg) => {                   
               this.messages.push(msg);
             });
-          
         }
       }
     },
