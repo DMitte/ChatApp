@@ -61,7 +61,7 @@ export default {
       conectionSocket(){
           if(this.$cookies.isKey('accessToken')){
        
-          this.socketio = io("http://localhost:5000", {
+          this.socketio = io("https://chatapp-back-gr5q.onrender.com", {
           withCredentials: true,
           });
           let username2 = this.$route.params.id

@@ -15,7 +15,7 @@ export default{
         async login(usuario){
              
             try{                
-                const res = await fetch('http://localhost:5000/api/chat/auth/signin', {
+                const res = await fetch('https://chatapp-back-gr5q.onrender.com/api/chat/auth/signin', {
                     method: 'post',
                     headers: {
                         "Content-type":"application/json"
@@ -38,7 +38,7 @@ export default{
         },
         async registro(usuario) {
             try{
-                const res = await fetch('http://localhost:5000/api/chat/auth/signup',{
+                const res = await fetch('https://chatapp-back-gr5q.onrender.com/api/chat/auth/signup',{
                     method: 'post',
                     headers: {
                         "Content-type":"application/json"
@@ -58,7 +58,7 @@ export default{
         },
         async forgotPassword(usuario) {
             try{
-                await fetch('http://localhost:5000/api/chat/auth/reset-password', {
+                await fetch('https://chatapp-back-gr5q.onrender.com/api/chat/auth/reset-password', {
                     method: 'post',
                     headers: {
                         "Content-type":"application/json"

@@ -21,7 +21,7 @@ export default {
   actions: {
     async getMyUser({ commit }) {
       try {
-        const res = await fetch("http://localhost:5000/api/chat/user/one", {
+        const res = await fetch("https://chatapp-back-gr5q.onrender.com/api/chat/user/one", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -38,7 +38,7 @@ export default {
     },
     async getAllUser({ commit }) {
       try {
-        const res = await fetch("http://localhost:5000/api/chat/user/all", {
+        const res = await fetch("https://chatapp-back-gr5q.onrender.com/api/chat/user/all", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -55,7 +55,7 @@ export default {
     async getOneUser(iduser) {
       console.log();
       try {
-        const res = await fetch("http://localhost:5000/api/chat/user/one/id", {
+        const res = await fetch("https://chatapp-back-gr5q.onrender.com/api/chat/user/one/id", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
